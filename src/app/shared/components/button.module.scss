@@ -1,0 +1,17 @@
+.Button {
+  background-color: transparent;
+  border-color: transparent;
+  padding: 5px;
+  width: 100%;
+  min-width: 28px;
+  min-height: 28px;
+  cursor: pointer;
+  outline: none;
+  &:hover {
+    background-color: lightgray;
+  }
+  &.primary {
+    background-color: lightseagreen;
+    color: white;
+  }
+}
