@@ -1,0 +1,16 @@
+.DragonForm {
+  > div {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    label {
+      width: 50px;
+    }
+    input {
+      width: 100%;
+      border-color: transparent;
+      border-bottom: 1px solid gray;
+    }
+  }
+}
