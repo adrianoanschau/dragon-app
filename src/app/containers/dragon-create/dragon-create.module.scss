@@ -1,0 +1,25 @@
+.DragonCreate {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  .avatar {
+    position: relative;
+    overflow: hidden;
+    max-width: 200px;
+    margin: 0;
+    padding: 10px;
+    img {
+      max-width: 100%;
+    }
+  }
+  .form {
+    padding: 10px;
+  }
+  .link {
+    display: block;
+    padding: 10px;
+    text-align: center;
+  }
+}
