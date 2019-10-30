@@ -1,0 +1,32 @@
+.SignIn {
+  position: relative;
+  height: 100%;
+  display: flex;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto 40px;
+    flex: 1;
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      flex: 1;
+      padding: 5px;
+      margin-bottom: 5px;
+    }
+  }
+  .title {
+    width: 100%;
+    padding: 10px;
+    background-color: purple;
+    color: white;
+    text-align: center;
+    margin: 0;
+  }
+  .subtitle {
+    color: gray;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+}
