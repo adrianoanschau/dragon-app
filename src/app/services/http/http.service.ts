@@ -1,6 +1,7 @@
 import {Observable, of} from 'rxjs';
 import { ajax } from 'rxjs/ajax';
 import { map, catchError } from 'rxjs/operators';
+
 import env from '../../../environment/development.json';
 
 type RequestMethod = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
@@ -30,7 +31,8 @@ export default class HttpClient {
         const request = this.createRequest(req);
         return ajax({
             method: request.method,
-            url: `${request.url}?${request.queryString}`,
+            url: `${request.url}?${request.queryString || ''}`,
+            body: req.body
         }).pipe(
             map(response => response.response),
             catchError(of)
@@ -43,5 +45,17 @@ export default class HttpClient {
 
     get(url = '', params = {}): Observable<any> {
         return this.request({ method: 'GET', url, params });
+    }
+
+    post(url = '', data = {}) {
+        return this.request({ method: 'POST', url, body: data });
+    }
+
+    put(url = '', data = {}): Observable<any> {
+        return this.request({ method: 'PUT', url, body: data });
+    }
+
+    delete(url = ''): Observable<any> {
+        return this.request({ method: 'DELETE', url });
     }
 }
